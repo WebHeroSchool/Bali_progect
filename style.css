@@ -1,283 +1,324 @@
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
-.background {
-  width: 100%;
-  height: 100vh;
-  background: url("images/background.jpg");
-  background-size: cover;
-  background-position: center;
+body {
+  margin: 0;
+}
+
+.main {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: url("images/background.jpg") no-repeat center;
+  background-size: cover;
   overflow: hidden;
+  width: 100%;
+  height: 100vh;
 }
 
-a {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 170px;
+}
+
+.menu {
+  width: 360px;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menu-link, a {
+  font-family: Museo Sans Cyrl;
+  font-size: 16px;
+  line-height: 19px;
   color: #F8EEE4;
   text-decoration: none;
 }
 
-.header {
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  width: 83.6%; 
-  margin-top: 63px;
-}
-
-.header__logo {
-  flex: 1;
-}
-
-.header__logo-img {
-  width: 104px;
-  height: 39px;
-}
-
-.header__menu {
-  flex: 2;
+.main-content {
   display: flex;
-  justify-content: flex-end;
-}
-
-.header__menu-link {
-  font-family: 'Museo Sans Cyrl';
-  font-size: 16px;
-  line-height: 19px;
-  margin-right: 24px;
-}
-
-.header__menu-link:last-child {
-  margin-right: 0;
+  flex-direction: row;
+  width: 80%;
 }
 
 .promo {
-  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  color: #F8EEE4;
+  height: 400px;
 }
 
-.section {
-  width: 50%;
-}
-
-.section__title {
-  text-align: center;
+.titles {
   display: flex;
-  align-items: flex-end;
-  margin-left: 16.4%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #F8EEE4;
+  width: 391px;
+  height: 265px;
 }
 
-.section__title-bali {
+.titles__bali {
   font-family: 'PT Serif';
   font-size: 200px;
   line-height: 265px;
-  color: #F8EEE4;
   opacity: 0.4;
-  margin-top: 92px;
+  margin: 0;
 }
 
-.section__title-indonesia {
+.titles__indonesia {
   position: absolute;
   font-family: 'PT Serif';
   font-style: normal;
   font-weight: bold;
   font-size: 70px;
   line-height: 93px;
-  color: #F8EEE4;
-  margin-bottom: 8px;
-  margin-left: 59px; 
+  margin: 164px 0 0 59px; 
 }
 
-.section__text-guide {
-  font-family: 'Museo Sans Cyrl';
+p {
+  margin: 0 0 24px 0;
+  font-family: Museo Sans Cyrl;
   font-size: 16px;
   line-height: 19px;
-  color: #F8EEE4;
-  width: 399px;
-  text-align: left;
-  margin-left: 17.7%;
-  margin-bottom: 24px;
 }
 
-.button {
-  text-align: left;
-  margin-left: 16.4%;
-  
-}
-
-.button__click {
-  font-family: 'Museo Sans Cyrl';
-  font-size: 16px;
-  line-height: 19px;
-  width: 209px;
-  height: 44px;
-  color: #FFF;
-  background: #D4BEA3;
+.book-btn {
+  padding: 12px 61px;
   border-radius: 48px;
+  background: #D4BEA3;
+  color: #FFFFFF;
 }
 
-.aside {
-  width: 50%;
-}
-
-.aside__galery {
-  margin-top: 185px;
+.galery {
   display: flex;
+  flex-wrap: nowrap;
+  width: 656px;
   align-items: center;
-}
-
-.aside__galery-img {
-  margin-right: 24px;
+  margin-top: 80px;
 }
 
 .img1 {
-  width: 225.75px;
+  width: 225px;
   height: 300px;
-  margin-left: 8.6%;
+  margin-right: 24px;
+  margin-left: 60px;
 }
 
 .img2 {
-  width: 202.27px;
+  width: 202px;
   height: 270px;
+  margin-right: 24px;
 }
 
 .img3 {
-  width: 180.6px;
+  width: 180px;
   height: 270px;
-  margin-right: 0;
 }
 
-
-@media (max-width: 768px) {
-  .background {
-    align-items: center;
+@media (min-width: 1025px) {
+  .promo {
+    width: 50%;
   }
 
+  .galery {
+    width: 50%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { 
   .header {
-    margin-top: 42px;
-    width: 80.2%;
+    width: 90%;
   }
 
-  .header__menu {
-    display: none;
-  }
-
-  .header__menu-burger {
-    position: relative;
-    display: inline-block;
-    width: 25px;
-    height: 17px;
-  }
-
-  .header__menu-burger span {
-    display: block;
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background: #FCF5ED;
-    cursor: move;
-  }  
-
-  .header__menu-burger span:nth-child(1) {
-    top: 2px;
-  }
-
-  .header__menu-burger span:nth-child(2), 
-  .header__menu-burger span:nth-child(3), 
-  .header__menu-burger span:nth-child(4) {
-    top: 9px;
-  }
-
-  .header__menu-burger span:nth-child(5) {
-    top: 16px;
+  .main-content {
+    width: 90%;
   }
 
   .promo {
-    width: 100%;
-    display: flex;
+    flex: 1;
   }
 
-  .section {
+  .galery {
+    flex: 1;
+  }
+
+  .img1 {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 130px;
+  }
+
+  .menu__btn {
+    display: flex; 
+    align-items: flex-end;
+    flex-wrap: wrap;
+    position: fixed;
+    margin-top: -20px;
+    left: 80%;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #FCF5ED;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -7px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 7px;
+  }
+  .list a {
+    font-family: Museo Sans Cyrl;
+    font-size: 30px;
+    line-height: 36px;
+    color: black;
+    text-transform: lowercase;
+  }
+
+  .menu__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    background-color: #E5E5E5;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 276px;
+    padding: 0;
+    margin: 0;
+  }
+
+  a:hover {
+    background-color: #D4BEA3;
+    border-radius: 50px;
+  }
+
+  #menu__toggle:checked ~ a {
+    color: #000000;
+    font-family: 'Museo Sans Cyrl';
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+    background-color: #172F27;
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+    background-color: #172F27;
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+    z-index: 1;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: .25s;
+  }
+  .menu__box {
+    transition-duration: .25s;
+  }
+  .menu__link {
+    transition-duration: .25s;
+  }
+
+  .main-content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .promo {
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    height: 435px;
+  }
+
+  .titles {
     width: 343px;
+    height: 226px;
   }
 
-  .section__title {
-    width: 91.4%;
-    margin-left: 0;
-  }
-
-  .section__title-bali {
+  .titles__bali {
     font-size: 170px;
     line-height: 225px;
-    margin-top: 54.88px;
   }
 
-  .section__title-indonesia {
+  .titles__indonesia {
+    margin: 148px 0 0 70px;
     font-size: 60px;
     line-height: 79px;
-    margin-bottom: 5px;
   }
 
-  .section__text-guide {
+  .promo__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 293px;
+  }
+
+  p {
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    width: 292.74px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35.9px;
-    margin-bottom: 35.9px;
   }
 
   br {
     display: none;
   }
 
-  .button {
-    position: absolute;
-    margin-left: 76.15px;
-    text-align: center;
-  }
-
-  .aside {
+  .galery {
     display: none;
-  }
-}
-
-
-@media (min-width: 769px) and (max-width: 1023px) {
-
-  .header {
-    width: 92.3%; 
-  }
-
-  .section__title {
-    margin-left: 8%;
-  }
-
-  .section__title-bali {
-    margin-top: 94.48px;
-  }
-
-  .section__text-guide {
-    margin-left: 8.9%;
-  }
-  .button {
-    margin-left: 8.9%;
-  }
-
-  .aside__galery {
-    margin-top: 184.48px;
-  }
-
-  .img1 {
-    margin-left: 0;
   }
 }
